@@ -1,7 +1,7 @@
 import random
 
+
 class Stock:
-    TOTAL_ASSETS_TRACKED = 0
 
     def __init__(self, ticker: str, name: str, initial_price: float, sector: str):
         self.ticker = ticker
@@ -9,7 +9,7 @@ class Stock:
         self._sector = sector
         self.__current_price = self._validate_price(initial_price)
         self.__shares_outstanding = random.randint(100_000_000, 1_000_000_000)
-        Stock.TOTAL_ASSETS_TRACKED += 1
+        self.__total_assets_tracked = 1
 
     @property
     def current_price(self) -> float:
@@ -40,3 +40,7 @@ class Stock:
 
     def get_shares_count(self) -> int:
         return self.__shares_outstanding
+
+    @property
+    def total_assets_tracked(self) -> int:
+        return self.__total_assets_tracked
