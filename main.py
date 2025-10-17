@@ -9,7 +9,7 @@ if __name__ == "__main__":
     spy = EtfFund("SPY", "S&P 500 ETF", 520.00, 500)
 
     print("=" * 60)
-    print(f"*** РИНОК: {Stock.get_exchange_name()} | Всього активів: {Stock.TOTAL_ASSETS_TRACKED} ***")
+    print(f"*** РИНОК: {Stock.get_exchange_name()} ***")
     print("=" * 60)
 
     print(f"Початкова ціна {aapl.ticker}: ${aapl.current_price:.2f}")
@@ -17,6 +17,8 @@ if __name__ == "__main__":
     aapl.current_price = 180.50
     aapl.current_price = 0
     print(f"Поточна ціна {aapl.ticker} після помилки: ${aapl.current_price:.2f}")
+
+    print(f"Активів для {msft.ticker} (нестатичний лічильник): {msft.total_assets_tracked}")
     print(f"Акцій JNJ в обігу: {jnj.get_shares_count():,}")
 
     print("-" * 60)
